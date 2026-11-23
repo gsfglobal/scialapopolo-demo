@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Locanda Scialapopolo · Cucina sannita a Benevento</title>
+<meta name="description" content="La vera cucina povera, quella del popolo. Lardiata, baccalà, pasta e ceci, mugliatiello e l'antipasto Scialapopolo, a due passi dal centro storico di Benevento. Prenota un tavolo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Caveat:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --carta:#f3ead8; --carta2:#e9dcc3; --bianco:#fbf6ec;
+  --castagna:#2e1c13; --castagna2:#45291b;
+  --strega:#e0a72a; --strega-d:#b9841a;
+  --vino:#7c2230; --bosco:#3e4a2e;
+  --grigio:#6b5b4e;
+  --r:18px;
+  --serif:"DM Serif Display",Georgia,serif; --mano:"Caveat",cursive; --sans:"Inter",system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--castagna);background:var(--carta);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+.wrap{width:min(1180px,92vw);margin:0 auto}
+.mano{font-family:var(--mano);color:var(--vino);font-size:1.6rem;line-height:1.1}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.05;letter-spacing:-.005em}
+h2{font-size:clamp(2.1rem,4.8vw,3.6rem)}
+.eyebrow{font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:var(--bosco)}
+.btn{display:inline-flex;align-items:center;gap:.55rem;padding:.95rem 1.5rem;border-radius:999px;font-weight:600;text-decoration:none;border:0;cursor:pointer;font-size:1rem;transition:transform .25s,box-shadow .25s,background .25s}
+.btn:hover{transform:translateY(-2px)}
+.btn-oro{background:var(--strega);color:var(--castagna);box-shadow:0 10px 30px -10px rgba(224,167,42,.7)}
+.btn-oro:hover{background:#ebb43a}
+.btn-vino{background:var(--vino);color:#fff;box-shadow:0 10px 30px -10px rgba(124,34,48,.7)}
+.btn-vino:hover{background:#651a26}
+.btn-chiaro{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.45);backdrop-filter:blur(6px)}
+.btn-scuro{background:var(--castagna);color:#fff}
+.btn svg{width:18px;height:18px}
+
+.demo{background:var(--castagna);color:#eadcc2;text-align:center;font-size:.8rem;padding:.45rem 1rem}
+.demo b{color:var(--strega)}
+
+/* nav */
+header.nav{position:sticky;top:0;z-index:50;transition:background .3s,box-shadow .3s}
+header.nav:not(.solid):not(.open){color:#fff}
+header.nav:not(.solid):not(.open) .logo .t small{color:rgba(255,255,255,.75)}
+header.nav:not(.solid):not(.open) .burger span{background:#fff}
+header.nav.solid{background:rgba(243,234,216,.93);backdrop-filter:blur(10px);box-shadow:0 1px 0 rgba(46,28,19,.1)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{display:flex;align-items:center;gap:.7rem;text-decoration:none}
+.logo .mark{width:46px;height:46px;border-radius:50%;background:var(--castagna);color:var(--strega);display:grid;place-items:center;font-family:var(--serif);font-size:1.6rem;font-style:italic;box-shadow:inset 0 0 0 3px var(--carta),0 0 0 2px var(--strega)}
+.logo .t{font-family:var(--serif);font-size:1.15rem;line-height:1.05}
+.logo .t small{display:block;font-family:var(--sans);font-weight:500;font-size:.66rem;letter-spacing:.17em;text-transform:uppercase;color:var(--grigio)}
+.nav ul{display:flex;gap:1.8rem;list-style:none;font-weight:500;font-size:.95rem}
+.nav ul a{text-decoration:none;position:relative}
+.nav ul a::after{content:"";position:absolute;left:0;bottom:-4px;height:2px;width:0;background:var(--strega);transition:width .3s}
+.nav ul a:hover::after{width:100%}
+.nav .btn{padding:.65rem 1.15rem;font-size:.92rem}
+.burger{display:none;background:none;border:0;width:44px;height:44px;cursor:pointer}
+.burger span{display:block;width:24px;height:2px;background:var(--castagna);margin:5px auto;transition:.3s}
+@media (max-width:900px){
+  .nav ul,.nav .desk{display:none}
+  .burger{display:block}
+  .nav.open{background:var(--carta)}
+  .nav.open ul{display:flex;flex-direction:column;position:absolute;top:72px;left:0;right:0;background:var(--carta);padding:1.2rem 4vw 1.6rem;gap:1.1rem;font-size:1.15rem;box-shadow:0 20px 30px -20px rgba(0,0,0,.25)}
+}
+
+/* hero */
+.hero{position:relative;min-height:calc(100svh - 100px);display:flex;align-items:flex-end;color:#fff;overflow:hidden;margin-top:-72px;padding-top:72px;background:var(--castagna)}
+.hero .bg{position:absolute;inset:-6% 0 0;background:url(img/hero.webp) center/cover;transform:scale(1.1);animation:zoom 20s ease-out forwards}
+@keyframes zoom{to{transform:scale(1)}}
+.hero::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 70% 30%,rgba(46,28,19,0) 0%,rgba(46,28,19,.35) 60%),linear-gradient(180deg,rgba(25,14,9,.6) 0%,rgba(25,14,9,.1) 35%,rgba(25,14,9,.9) 100%)}
+.hero .wrap{position:relative;z-index:2;padding:clamp(1.5rem,4vh,3rem) 0 clamp(2.5rem,7vh,5rem)}
+.hero .mano{color:var(--strega);font-size:clamp(1.8rem,3.4vw,2.5rem)}
+.hero h1{font-size:clamp(2.7rem,7.4vw,5.9rem);max-width:14ch;margin:.3rem 0 1rem}
+.hero h1 em{color:var(--strega)}
+.hero p.lead{max-width:560px;font-size:clamp(1.02rem,1.6vw,1.2rem);opacity:.92}
+.hero .cta{display:flex;flex-wrap:wrap;gap:.8rem;margin:1.8rem 0 2.2rem}
+.badges{display:flex;flex-wrap:wrap;gap:.6rem}
+.badge{display:flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);backdrop-filter:blur(8px);padding:.5rem .9rem;border-radius:12px;font-size:.88rem}
+.badge b{font-family:var(--serif);font-size:1.2rem;font-weight:400}
+.stars{color:var(--strega);letter-spacing:1px}
+/* lucciole / scintille */
+.spark{position:absolute;z-index:1;width:4px;height:4px;border-radius:50%;background:var(--strega);box-shadow:0 0 10px 3px rgba(224,167,42,.6);opacity:0;animation:spark 7s ease-in-out infinite}
+@keyframes spark{0%{opacity:0;transform:translate(0,0)}20%{opacity:.9}100%{opacity:0;transform:translate(30px,-160px)}}
+
+/* marquee */
+.marquee{background:var(--strega);color:var(--castagna);overflow:hidden;white-space:nowrap;padding:1rem 0;border-block:3px solid var(--castagna)}
+.marquee .track{display:inline-flex;gap:2.4rem;animation:scroll 42s linear infinite;font-family:var(--serif);font-size:1.4rem;font-style:italic}
+.marquee span::after{content:"✦";margin-left:2.4rem;font-style:normal;color:var(--vino);font-size:.9rem;vertical-align:middle}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+section{padding:clamp(4.5rem,10vw,8rem) 0}
+
+/* locanda */
+.storia .grid{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(2rem,6vw,5rem);align-items:center}
+.storia .foto{position:relative;height:clamp(440px,62vw,640px)}
+.storia .foto img{position:absolute;object-fit:cover;border-radius:var(--r);box-shadow:0 30px 60px -30px rgba(46,28,19,.6)}
+.storia .f1{width:64%;height:86%;left:0;top:0}
+.storia .f2{width:50%;height:60%;right:0;bottom:0;border:8px solid var(--carta)}
+.storia .bollo{position:absolute;left:50%;top:4%;width:124px;height:124px;border-radius:50%;background:var(--strega);color:var(--castagna);display:grid;place-items:center;text-align:center;font-family:var(--mano);font-size:1.35rem;line-height:1;box-shadow:0 12px 30px -10px rgba(0,0,0,.4);animation:spin 26s linear infinite}
+@keyframes spin{from{transform:rotate(-10deg)}to{transform:rotate(350deg)}}
+.storia h2{margin:.6rem 0 1.3rem}
+.storia p{color:var(--grigio);font-size:1.07rem;margin-bottom:1rem}
+.motto{font-family:var(--serif);font-style:italic;font-size:1.45rem;color:var(--castagna);border-left:4px solid var(--strega);padding:.3rem 0 .3rem 1rem;margin:1.4rem 0}
+.pilastri{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2rem}
+.pilastro{background:var(--bianco);border-radius:14px;padding:1.1rem;border:1px solid rgba(46,28,19,.08)}
+.pilastro b{font-family:var(--serif);font-weight:400;font-size:1.2rem;display:block;margin-bottom:.2rem}
+.pilastro span{font-size:.88rem;color:var(--grigio)}
+@media (max-width:900px){.storia .grid{grid-template-columns:1fr}.pilastri{grid-template-columns:1fr}}
+
+/* scialare */
+.feature{background:var(--castagna);color:var(--carta);position:relative;overflow:hidden}
+.feature::before{content:"";position:absolute;inset:0;opacity:.05;background-image:radial-gradient(var(--strega) 1px,transparent 1.5px);background-size:22px 22px}
+.feature .grid{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,6vw,5rem);align-items:center}
+.feature .img3d{perspective:1000px}
+.feature .img3d img{border-radius:var(--r);transform:rotateY(-10deg) rotateX(4deg);transition:transform .2s ease-out;box-shadow:30px 40px 70px -30px rgba(0,0,0,.85)}
+.feature .eyebrow{color:var(--strega)}
+.feature h2{margin:.5rem 0 1rem}
+.feature h2 em{color:var(--strega)}
+.feature p{opacity:.86;font-size:1.07rem;margin-bottom:1.2rem}
+.voce{display:flex;gap:1rem;align-items:baseline;background:rgba(255,255,255,.05);border:1px solid rgba(224,167,42,.25);border-radius:14px;padding:1rem 1.2rem;margin-bottom:1.6rem}
+.voce b{font-family:var(--serif);font-weight:400;font-size:1.6rem;color:var(--strega);white-space:nowrap}
+.voce span{font-size:.95rem;opacity:.85}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-bottom:1.8rem}
+.duo div{border-top:1px solid rgba(243,234,216,.25);padding-top:.8rem}
+.duo h3{font-size:1.35rem;color:#fff}
+.duo small{opacity:.75}
+@media (max-width:900px){.feature .grid{grid-template-columns:1fr}}
+
+/* menu */
+.menu .head{display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;flex-wrap:wrap;margin-bottom:2.4rem}
+.menu .head p{max-width:460px;color:var(--grigio)}
+.tabs{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:2rem}
+.tab{background:transparent;border:1.5px solid var(--castagna);padding:.6rem 1.2rem;border-radius:999px;font:600 .95rem var(--sans);cursor:pointer;color:var(--castagna);transition:.25s}
+.tab[aria-selected="true"]{background:var(--castagna);color:var(--carta)}
+.pannello{display:none;grid-template-columns:1fr 1fr;gap:0 3.5rem}
+.pannello.on{display:grid;animation:fade .5s}
+@keyframes fade{from{opacity:0;transform:translateY(12px)}}
+.piatto{padding:1.25rem 0;border-bottom:1px dashed rgba(46,28,19,.25)}
+.piatto .r{display:flex;justify-content:space-between;gap:1rem;align-items:baseline}
+.piatto h3{font-size:1.42rem}
+.piatto .tag{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:var(--vino);white-space:nowrap}
+.piatto p{color:var(--grigio);font-size:.96rem;margin-top:.25rem}
+.nota-menu{margin-top:2rem;font-size:.85rem;color:var(--grigio);background:var(--carta2);padding:.9rem 1.1rem;border-radius:12px;border-left:4px solid var(--strega)}
+@media (max-width:800px){.pannello{grid-template-columns:1fr}}
+
+/* stagioni */
+.stagioni{background:var(--bosco);color:var(--carta);padding:clamp(3.5rem,7vw,5.5rem) 0}
+.stagioni .row{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:2rem}
+.stag{border:1px solid rgba(243,234,216,.22);border-radius:16px;padding:1.3rem;transition:background .3s,transform .3s}
+.stag:hover{background:rgba(243,234,216,.06);transform:translateY(-4px)}
+.stag .ico{font-size:1.6rem}
+.stag h3{font-size:1.4rem;margin:.4rem 0 .2rem}
+.stag p{font-size:.92rem;opacity:.8}
+.stag.ora{background:rgba(224,167,42,.14);border-color:var(--strega)}
+.stag.ora h3::after{content:" · adesso";font-family:var(--mano);color:var(--strega);font-size:1.2rem}
+.stagioni h2{color:#fff}
+@media (max-width:900px){.stagioni .row{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.stagioni .row{grid-template-columns:1fr}}
+
+/* galleria */
+.galleria{padding-bottom:clamp(3rem,6vw,5rem)}
+.scroller{display:flex;gap:1rem;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 4vw 1rem;scrollbar-width:none}
+.scroller::-webkit-scrollbar{display:none}
+.scroller figure{flex:0 0 clamp(260px,32vw,420px);scroll-snap-align:center;position:relative;min-width:0}
+.scroller img{width:100%;height:clamp(320px,40vw,480px);object-fit:cover;border-radius:var(--r)}
+.scroller figcaption{position:absolute;left:1rem;bottom:1rem;color:#fff;font-family:var(--mano);font-size:1.7rem;text-shadow:0 2px 12px rgba(0,0,0,.7)}
+.gal-ctrl{display:flex;justify-content:space-between;align-items:center;margin-top:1rem}
+.gal-ctrl small{color:var(--grigio)}
+.gal-ctrl .frecce{display:flex;gap:.5rem}
+.freccia{width:46px;height:46px;border-radius:50%;border:1.5px solid var(--castagna);background:none;cursor:pointer;font-size:1.2rem;color:var(--castagna)}
+.freccia:hover{background:var(--castagna);color:var(--carta)}
+
+/* recensioni */
+.recensioni{background:var(--bianco)}
+.rec-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:clamp(2rem,6vw,5rem);align-items:start}
+.voti{display:grid;gap:1rem;margin-top:2rem}
+.voto{display:flex;align-items:center;justify-content:space-between;background:var(--carta);border-radius:14px;padding:1.1rem 1.3rem;text-decoration:none;transition:transform .25s}
+.voto:hover{transform:translateX(6px)}
+.voto b{font-family:var(--serif);font-weight:400;font-size:2.4rem;line-height:1}
+.voto small{display:block;color:var(--grigio)}
+.tc{display:inline-flex;align-items:center;gap:.5rem;margin-top:1rem;background:var(--castagna);color:var(--strega);padding:.5rem .9rem;border-radius:999px;font-size:.85rem;font-weight:600}
+.temi{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.tema{background:var(--carta);border-radius:16px;padding:1.4rem}
+.tema .ico{font-size:1.6rem}
+.tema h3{font-size:1.3rem;margin:.4rem 0 .3rem}
+.tema p{font-size:.93rem;color:var(--grigio)}
+.rec-nota{grid-column:1/-1;font-size:.82rem;color:var(--grigio)}
+@media (max-width:900px){.rec-grid{grid-template-columns:1fr}.temi{grid-template-columns:1fr}}
+
+/* orari */
+.orari .grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,6vw,5rem)}
+.tabella{margin-top:1.6rem;border-top:1px solid rgba(46,28,19,.15)}
+.riga{display:flex;justify-content:space-between;gap:1rem;padding:.85rem .4rem;border-bottom:1px solid rgba(46,28,19,.15);font-size:1.02rem}
+.riga.oggi{background:var(--carta2);font-weight:600;border-radius:8px}
+.riga.oggi .g::after{content:" · oggi";color:var(--vino);font-weight:600}
+.riga .chiuso{color:var(--vino)}
+.riga span:last-child{text-align:right}
+.stato{display:inline-flex;align-items:center;gap:.5rem;margin-top:1.2rem;font-weight:600}
+.stato i{width:10px;height:10px;border-radius:50%;background:#999;flex:none}
+.stato.aperto i{background:#3c9a4b;box-shadow:0 0 0 4px rgba(60,154,75,.2)}
+.dove{background:var(--castagna);color:var(--carta);border-radius:24px;padding:clamp(1.6rem,4vw,2.6rem)}
+.mappa{height:220px;border-radius:16px;margin-bottom:1.6rem;background:
+  radial-gradient(circle at 55% 48%,var(--strega) 0 9px,transparent 10px),
+  radial-gradient(circle at 55% 48%,rgba(224,167,42,.28) 0 26px,transparent 27px),
+  linear-gradient(90deg,transparent 48%,rgba(243,234,216,.16) 48% 52%,transparent 52%),
+  linear-gradient(0deg,transparent 30%,rgba(243,234,216,.13) 30% 33%,transparent 33%),
+  linear-gradient(-32deg,transparent 60%,rgba(243,234,216,.11) 60% 62%,transparent 62%),
+  #3d271b;display:flex;align-items:flex-end;padding:1rem}
+.mappa span{background:var(--carta);color:var(--castagna);padding:.35rem .8rem;border-radius:999px;font-size:.85rem;font-weight:600}
+.dove h3{font-size:1.8rem;margin-bottom:.4rem}
+.dove p{opacity:.85}
+.dove .azioni{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.4rem}
+.dove .btn-chiaro{border-color:rgba(243,234,216,.4)}
+.mini{font-size:.82rem;opacity:.7;margin-top:1rem}
+@media (max-width:900px){.orari .grid{grid-template-columns:1fr}}
+
+/* prenota */
+.prenota{background:var(--vino);color:#fff;position:relative;overflow:hidden}
+.prenota::before{content:"";position:absolute;inset:0;opacity:.07;background-image:radial-gradient(#fff 1.2px,transparent 1.6px);background-size:26px 26px}
+.prenota .grid{position:relative;display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(2rem,6vw,5rem);align-items:center}
+.prenota .mano{color:var(--strega);font-size:2.1rem}
+.prenota p{opacity:.9;font-size:1.07rem;margin-top:1rem}
+form.card{background:var(--bianco);color:var(--castagna);border-radius:24px;padding:clamp(1.4rem,4vw,2.4rem);box-shadow:0 40px 80px -40px rgba(0,0,0,.6);display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+form .full{grid-column:1/-1}
+label{font-size:.82rem;font-weight:600;display:block;margin-bottom:.35rem}
+input,select,textarea{width:100%;padding:.85rem 1rem;border:1.5px solid rgba(46,28,19,.18);border-radius:12px;font:inherit;background:#fff;color:inherit}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--strega-d)}
+textarea{resize:vertical;min-height:80px}
+.err{color:var(--vino);font-size:.85rem;min-height:1.2em}
+.esito{display:none;background:#eef5ea;border:1px solid #b8d3ae;border-radius:14px;padding:1rem 1.1rem;font-size:.93rem}
+.esito.on{display:block}
+.esito a{margin-top:.7rem}
+@media (max-width:900px){.prenota .grid{grid-template-columns:1fr}}
+@media (max-width:520px){form.card{grid-template-columns:1fr}}
+
+/* footer */
+footer{background:var(--castagna);color:rgba(243,234,216,.8);padding:4rem 0 2rem;font-size:.92rem}
+footer .grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:2rem}
+footer h4{font-family:var(--serif);font-weight:400;color:var(--carta);font-size:1.25rem;margin-bottom:.8rem}
+footer a{text-decoration:none}
+footer a:hover{color:var(--strega)}
+footer .big{font-family:var(--serif);font-size:clamp(2.2rem,6vw,3.8rem);color:var(--carta);line-height:1;margin-bottom:1rem}
+footer .big em{font-family:var(--mano);color:var(--strega);font-style:normal}
+.legal{border-top:1px solid rgba(243,234,216,.15);margin-top:3rem;padding-top:1.4rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;font-size:.8rem;opacity:.7}
+@media (max-width:800px){footer .grid{grid-template-columns:1fr}}
+
+.mob{display:none}
+@media (max-width:700px){
+  .mob{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;position:fixed;left:.7rem;right:.7rem;bottom:.7rem;z-index:60;transform:translateY(140%);transition:transform .35s}
+  .mob.on{transform:none}
+  .mob .btn{justify-content:center;padding:.85rem}
+}
+
+.rv{opacity:0;transform:translateY(34px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+.rv.d1{transition-delay:.12s}.rv.d2{transition-delay:.24s}.rv.d3{transition-delay:.36s}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<div class="demo"><b>Anteprima</b> · proposta di sito per la Locanda Scialapopolo · foto illustrative, contenuti da confermare</div>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Locanda Scialapopolo, inizio pagina">
+      <span class="mark">S</span>
+      <span class="t">Locanda Scialapopolo<small>Cucina sannita · Benevento</small></span>
+    </a>
+    <ul id="menu-nav">
+      <li><a href="#locanda">La locanda</a></li>
+      <li><a href="#piatti">I piatti</a></li>
+      <li><a href="#recensioni">Dicono di noi</a></li>
+      <li><a href="#orari">Orari e dove</a></li>
+    </ul>
+    <a class="btn btn-oro desk" href="#prenota">Prenota un tavolo</a>
+    <button class="burger" id="burger" aria-label="Apri il menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero" aria-label="Benvenuti">
+  <div class="bg" id="herobg"></div>
+  <div id="sparks" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="mano rv">Trasite… e scialate.</div>
+    <h1 class="rv d1">La vera cucina povera, <em>quella del popolo.</em></h1>
+    <p class="lead rv d2">Lardiata, pasta e ceci, baccalà, mugliatiello e zuppe di stagione. Una locanda di famiglia a due passi dal centro storico di Benevento, dove ogni piatto arriva in tavola con la sua storia.</p>
+    <div class="cta rv d3">
+      <a class="btn btn-oro" href="#prenota"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18"/></svg>Prenota un tavolo</a>
+      <a class="btn btn-chiaro" href="tel:+393317920783"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>331 792 0783</a>
+    </div>
+    <div class="badges rv d3">
+      <div class="badge"><b>#1</b> dei 218 ristoranti di Benevento su Tripadvisor</div>
+      <div class="badge"><span class="stars">★★★★★</span><b>4,7</b> · oltre 1.300 recensioni</div>
+      <div class="badge">🏆 Travellers' Choice 2026</div>
+    </div>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true"><div class="track" id="track">
+  <span>Pennette lardiate</span><span>Pasta e ceci</span><span>Baccalà su crema di ceci</span><span>Mugliatiello</span><span>Brasato norcino</span><span>Cardone</span><span>Ciambotta</span><span>Ravioli fichi e ricotta</span><span>Zuppa di talli e fagioli</span><span>Liquori del Sannio</span>
+</div></div>
+
+<section class="storia" id="locanda">
+  <div class="wrap grid">
+    <div class="foto rv">
+      <img class="f1" src="img/sala.webp" alt="Sala rustica con volte in pietra e arredi d'altri tempi (foto illustrativa)" loading="lazy">
+      <img class="f2" src="img/mani.webp" alt="Mani che preparano pasta fresca su una spianatoia (foto illustrativa)" loading="lazy">
+      <div class="bollo">cucina<br>povera<br>e vera</div>
+    </div>
+    <div>
+      <div class="eyebrow rv">La locanda</div>
+      <h2 class="rv d1">Una locanda<br>come una volta.</h2>
+      <p class="rv d2">Pochi tavoli, arredi d'altri tempi e il profumo della cucina di casa. La Locanda Scialapopolo è una trattoria di famiglia: Alfonso in sala, Antonella e la figlia ai fornelli, tutti insieme a portare in tavola la cucina sannita di sempre.</p>
+      <p class="rv d2">Il menu cambia con le stagioni e lo racconta Alfonso, piatto per piatto: da dove viene la ricetta, perché si mangia in quel periodo, cosa c'entra con la storia di Benevento. Chi viene una volta, di solito, torna.</p>
+      <div class="motto rv d2">«La vera cucina povera, quella del popolo. In parole povere: farvi scialare.»</div>
+      <div class="pilastri rv d3">
+        <div class="pilastro"><b>Famiglia</b><span>Una gestione familiare che si sente dall'accoglienza.</span></div>
+        <div class="pilastro"><b>Stagione</b><span>Si cucina quello che la terra dà in quel momento.</span></div>
+        <div class="pilastro"><b>Sannio</b><span>Ricette e prodotti di Benevento e dintorni.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="feature" aria-labelledby="sc-t">
+  <div class="wrap grid">
+    <div class="img3d rv"><img id="tilt" src="img/antipasto.webp" alt="Tagliere di salumi e formaggi su legno (foto illustrativa)" loading="lazy"></div>
+    <div>
+      <div class="eyebrow rv">Il nome</div>
+      <h2 id="sc-t" class="rv d1">Scialare:<br><em>mangiare in abbondanza.</em></h2>
+      <div class="voce rv d2"><b>scialà</b><span>v. · godersela, fare festa a tavola, senza fretta e senza risparmio.</span></div>
+      <p class="rv d2">Per cominciare ci sono due antipasti della casa, tanto ricchi che una porzione basta per due. Ci trovi i salumi e i formaggi del territorio, le verdure di stagione e i piatti del giorno della cucina.</p>
+      <div class="duo rv d2">
+        <div><h3>Antipasto Scialapopolo</h3><small>Quello che porta il nome della locanda</small></div>
+        <div><h3>Antipasto Antica</h3><small>I sapori della tradizione beneventana</small></div>
+      </div>
+      <a class="btn btn-oro rv d3" href="#prenota">Prenota e vieni a scialare</a>
+    </div>
+  </div>
+</section>
+
+<section class="menu" id="piatti">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <div class="eyebrow rv">I piatti</div>
+        <h2 class="rv d1">Quello che si mangia<br>da Scialapopolo.</h2>
+      </div>
+      <p class="rv d2">Il menu segue le stagioni e le tradizioni sannite, quindi cambia spesso. Questi sono i piatti che gli ospiti ricordano di più.</p>
+    </div>
+    <div class="tabs rv" role="tablist">
+      <button class="tab" role="tab" aria-selected="true" data-p="p1">Antipasti</button>
+      <button class="tab" role="tab" aria-selected="false" data-p="p2">Primi e zuppe</button>
+      <button class="tab" role="tab" aria-selected="false" data-p="p3">Secondi</button>
+      <button class="tab" role="tab" aria-selected="false" data-p="p4">Dolci e liquori</button>
+    </div>
+
+    <div class="pannello on" id="p1" role="tabpanel">
+      <div class="piatto"><div class="r"><h3>Antipasto Scialapopolo</h3><span class="tag">Della casa</span></div><p>Ricco e abbondante: una porzione va bene per due.</p></div>
+      <div class="piatto"><div class="r"><h3>Antipasto Antica</h3></div><p>I sapori genuini della tradizione, da dividere.</p></div>
+      <div class="piatto"><div class="r"><h3>Parmigiana</h3><span class="tag">Classico</span></div><p>Come si fa a casa, a strati e senza fretta.</p></div>
+      <div class="piatto"><div class="r"><h3>Lupini e olive</h3></div><p>Per accompagnare il vino mentre si aspetta.</p></div>
+    </div>
+    <div class="pannello" id="p2" role="tabpanel">
+      <div class="piatto"><div class="r"><h3>Pennette lardiate</h3><span class="tag">Il più ricordato</span></div><p>Il sugo antico beneventano con il lardo. Un ospite ha scritto che se la sarebbe ricordata per giorni.</p></div>
+      <div class="piatto"><div class="r"><h3>Pasta e ceci</h3></div><p>Il piatto del popolo per eccellenza, a volte anche fuori menu su richiesta.</p></div>
+      <div class="piatto"><div class="r"><h3>Ziti alla contadina</h3></div><p>Una ricetta di campagna, semplice e saporita.</p></div>
+      <div class="piatto"><div class="r"><h3>Ravioli con fichi e ricotta</h3></div><p>Il dolce e il salato nello stesso piatto.</p></div>
+      <div class="piatto"><div class="r"><h3>Zuppa di talli e fagioli</h3><span class="tag">Di stagione</span></div><p>Oppure di cicoria: dipende da cosa offre la terra.</p></div>
+      <div class="piatto"><div class="r"><h3>Cardone</h3><span class="tag">D'inverno</span></div><p>La minestra delle feste beneventane.</p></div>
+    </div>
+    <div class="pannello" id="p3" role="tabpanel">
+      <div class="piatto"><div class="r"><h3>Baccalà su crema di ceci</h3><span class="tag">Da provare</span></div><p>Il mare e la terra del Sannio insieme.</p></div>
+      <div class="piatto"><div class="r"><h3>Brasato norcino</h3></div><p>Carne cotta a lungo, come facevano i norcini.</p></div>
+      <div class="piatto"><div class="r"><h3>Mugliatiello</h3><span class="tag">Tipico</span></div><p>Un piatto antico della tradizione contadina, per chi vuole il Sannio vero.</p></div>
+      <div class="piatto"><div class="r"><h3>Alici in tortiera</h3></div><p>Alici freschissime al forno, nel tegame.</p></div>
+      <div class="piatto"><div class="r"><h3>Ciambotta</h3></div><p>Verdure di stagione stufate insieme, piatto povero e ricchissimo.</p></div>
+    </div>
+    <div class="pannello" id="p4" role="tabpanel">
+      <div class="piatto"><div class="r"><h3>Crostata della casa</h3></div><p>Fatta in casa.</p></div>
+      <div class="piatto"><div class="r"><h3>Babà</h3></div><p>Per chi vuole chiudere alla napoletana.</p></div>
+      <div class="piatto"><div class="r"><h3>Gelato alla mela stregata</h3><span class="tag">Mela annurca</span></div><p>Benevento è la città delle janare, le streghe della leggenda: qui anche la mela è stregata.</p></div>
+      <div class="piatto"><div class="r"><h3>Liquori del territorio</h3><span class="tag">Un assaggio dalla casa</span></div><p>Alla fine del pasto Alfonso vi fa assaggiare i liquori locali.</p></div>
+    </div>
+    <div class="nota-menu rv">Anteprima: i piatti sono quelli citati nelle recensioni degli ospiti. Il menu del momento, con prezzi e allergeni, lo inserisce la locanda e si aggiorna da telefono.</div>
+  </div>
+</section>
+
+<section class="stagioni" aria-labelledby="st-t">
+  <div class="wrap">
+    <div class="eyebrow rv" style="color:var(--strega)">Il calendario della locanda</div>
+    <h2 id="st-t" class="rv d1">Ogni stagione, la sua cucina.</h2>
+    <div class="row" id="stag">
+      <div class="stag rv" data-m="2,3,4"><div class="ico">🌱</div><h3>Primavera</h3><p>Fave, piselli, erbe di campo e le prime verdure dell'orto.</p></div>
+      <div class="stag rv d1" data-m="5,6,7"><div class="ico">☀️</div><h3>Estate</h3><p>Ciambotta, alici, pomodori e piatti più leggeri.</p></div>
+      <div class="stag rv d2" data-m="8,9,10"><div class="ico">🍂</div><h3>Autunno</h3><p>Legumi, funghi, castagne e la mela annurca.</p></div>
+      <div class="stag rv d3" data-m="11,0,1"><div class="ico">🔥</div><h3>Inverno</h3><p>Zuppe, cardone, carni brasate e la lardiata.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="galleria" aria-label="Galleria">
+  <div class="scroller" id="scroller">
+    <figure><img src="img/fagioli.webp" decoding="async" alt="Piatto di fagioli in umido con pane (foto illustrativa)"><figcaption>'e fasule</figcaption></figure>
+    <figure><img src="img/tavolata.webp" decoding="async" alt="Tavolata tra amici vista dall'alto (foto illustrativa)"><figcaption>'a tavulata</figcaption></figure>
+    <figure><img src="img/ragu.webp" decoding="async" alt="Pasta al sugo di carne (foto illustrativa)"><figcaption>'o rraù</figcaption></figure>
+    <figure><img src="img/pane-legumi.webp" alt="Pane casereccio e zuppa di legumi (foto illustrativa)" loading="lazy"><figcaption>pane e legumi</figcaption></figure>
+    <figure><img src="img/fave.webp" alt="Zuppa di fave e pancetta (foto illustrativa)" loading="lazy"><figcaption>'e fave</figcaption></figure>
+    <figure><img src="img/sera.webp" alt="Cena in compagnia con vino (foto illustrativa)" loading="lazy"><figcaption>'a sera</figcaption></figure>
+  </div>
+  <div class="wrap gal-ctrl">
+    <small>Foto illustrative, da sostituire con quelle della locanda.</small>
+    <div class="frecce"><button class="freccia" id="prev" aria-label="Foto precedente">←</button><button class="freccia" id="next" aria-label="Foto successiva">→</button></div>
+  </div>
+</section>
+
+<section class="recensioni" id="recensioni">
+  <div class="wrap rec-grid">
+    <div>
+      <div class="eyebrow rv">Dicono di noi</div>
+      <h2 class="rv d1">Il numero 1<br>di Benevento.</h2>
+      <div class="voti">
+        <a class="voto rv d1" href="https://www.tripadvisor.it/Restaurant_Review-g194690-d10066701-Reviews-Locanda_Scialapopolo-Benevento_Province_of_Benevento_Campania.html" target="_blank" rel="noopener"><div><b>4,7</b><small>Tripadvisor · 1.356 recensioni · n. 1 su 218</small></div><span class="stars">★★★★★</span></a>
+        <a class="voto rv d2" href="https://www.google.com/maps/search/?api=1&query=Locanda%20Scialapopolo%20Via%20Francesco%20Paga%2069%20Benevento" target="_blank" rel="noopener"><div><b>4,6</b><small>Google · oltre 1.000 recensioni</small></div><span class="stars">★★★★★</span></a>
+      </div>
+      <div class="tc rv d3">🏆 Travellers' Choice 2026</div>
+    </div>
+    <div class="temi">
+      <div class="tema rv"><div class="ico">🎭</div><h3>Alfonso racconta</h3><p>Il padrone di casa spiega ogni piatto e la storia di Benevento: per molti è la parte più bella della serata.</p></div>
+      <div class="tema rv d1"><div class="ico">🌾</div><h3>Sannio autentico</h3><p>Cucina tipica e casereccia, prodotti locali e ricette che oggi si trovano di rado.</p></div>
+      <div class="tema rv d2"><div class="ico">🍽️</div><h3>Porzioni generose</h3><p>Si mangia tanto e bene, con un rapporto qualità-prezzo che gli ospiti lodano spesso.</p></div>
+      <div class="tema rv d3"><div class="ico">🏡</div><h3>Come stare a casa</h3><p>Pochi tavoli e un'accoglienza familiare. Proprio per questo conviene prenotare.</p></div>
+      <p class="rec-nota">Sintesi delle recensioni pubbliche (novembre 2026). Le recensioni complete si possono mostrare con il widget ufficiale di Google o Tripadvisor.</p>
+    </div>
+  </div>
+</section>
+
+<section class="orari" id="orari">
+  <div class="wrap grid">
+    <div>
+      <div class="eyebrow rv">Orari</div>
+      <h2 class="rv d1">Pranzo e cena,<br>tranne il martedì.</h2>
+      <div class="stato rv" id="stato"><i></i><span>…</span></div>
+      <div class="tabella rv d1" id="tabella"></div>
+      <p class="mini" style="opacity:1;color:var(--grigio)">Orari da confermare con la locanda. I tavoli sono pochi: meglio prenotare, soprattutto nel fine settimana.</p>
+    </div>
+    <div class="dove rv d1">
+      <div class="mappa"><span>📍 Via Francesco Paga 69</span></div>
+      <h3>Dove siamo</h3>
+      <p>Via Francesco Paga 69, 82100 Benevento (BN)<br>A pochi passi dal centro storico.<br>Telefono: 331 792 0783</p>
+      <div class="azioni">
+        <a class="btn btn-oro" href="https://www.google.com/maps/dir/?api=1&destination=Via%20Francesco%20Paga%2069%2C%2082100%20Benevento%20BN" target="_blank" rel="noopener">Indicazioni</a>
+        <a class="btn btn-chiaro" href="tel:+393317920783">Chiama</a>
+      </div>
+      <p class="mini">Accesso per persone con disabilità.</p>
+    </div>
+  </div>
+</section>
+
+<section class="prenota" id="prenota">
+  <div class="wrap grid">
+    <div>
+      <div class="mano rv">Ve tenimmo 'o posto.</div>
+      <h2 class="rv d1">Prenota il tuo tavolo.</h2>
+      <p class="rv d2">Compila la richiesta: si apre WhatsApp con il messaggio già scritto. La locanda ti risponde per confermare il tavolo.</p>
+      <p class="rv d2" style="font-size:.95rem;opacity:.8">Preferisci chiamare? 331 792 0783</p>
+    </div>
+    <form class="card rv d1" id="form" novalidate>
+      <div class="full"><label for="nome">Nome e cognome</label><input id="nome" autocomplete="name" required></div>
+      <div><label for="data">Giorno</label><input type="date" id="data" required></div>
+      <div><label for="ora">Orario</label><select id="ora" required><option value="">Scegli prima il giorno</option></select></div>
+      <div><label for="pers">Persone</label><select id="pers"></select></div>
+      <div><label for="tel">Telefono</label><input id="tel" type="tel" autocomplete="tel" inputmode="tel"></div>
+      <div class="full"><label for="note">Note (allergie, seggiolone, occasione…)</label><textarea id="note"></textarea></div>
+      <div class="full err" id="err" role="alert"></div>
+      <div class="full"><button class="btn btn-oro" type="submit" style="width:100%;justify-content:center">Invia la richiesta su WhatsApp</button></div>
+      <div class="full esito" id="esito" role="status">
+        <b>Messaggio pronto.</b> Apri WhatsApp e premi invia: il tavolo è confermato solo quando la locanda ti risponde.<br>
+        <a class="btn btn-scuro" id="walink" href="#" target="_blank" rel="noopener">Apri WhatsApp</a>
+      </div>
+      <p class="full" style="font-size:.78rem;color:var(--grigio)">I dati servono solo a gestire la prenotazione.</p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <div class="big">Venite<br><em>a scialare.</em></div>
+        <p>Locanda Scialapopolo · cucina tipica sannita</p>
+      </div>
+      <div>
+        <h4>Contatti</h4>
+        <p>Via Francesco Paga 69<br>82100 Benevento (BN)<br><a href="tel:+393317920783">331 792 0783</a></p>
+      </div>
+      <div>
+        <h4>Orari</h4>
+        <p>Lun e Mer–Sab: 12:00–15:00 · 18:30–22:30<br>Domenica: 12:00–15:30<br>Martedì chiuso</p>
+      </div>
+    </div>
+    <div class="legal"><span>© 2026 Locanda Scialapopolo · P.IVA [da inserire]</span><span>Privacy · Cookie</span></div>
+  </div>
+</footer>
+
+<div class="mob" id="mob">
+  <a class="btn btn-scuro" href="tel:+393317920783">Chiama</a>
+  <a class="btn btn-oro" href="#prenota">Prenota</a>
+</div>
+
+<script>
+(function(){
+  var WA='393317920783';
+  // 0=domenica; [hInizio,mInizio,hFine,mFine]
+  var CENA=[18,30,22,30],PRANZO=[12,0,15,0];
+  var ORARI={0:[[12,0,15,30]],1:[PRANZO,CENA],2:[],3:[PRANZO,CENA],4:[PRANZO,CENA],5:[PRANZO,CENA],6:[PRANZO,CENA]};
+  var GIORNI=['Domenica','Lunedì','Martedì','Mercoledì','Giovedì','Venerdì','Sabato'];
+  var p2=function(n){return (n<10?'0':'')+n};
+  var fmt=function(s){return s.map(function(f){return p2(f[0])+':'+p2(f[1])+'–'+p2(f[2])+':'+p2(f[3])}).join(' · ')};
+
+  var nav=document.getElementById('nav'),mob=document.getElementById('mob'),bg=document.getElementById('herobg');
+  var onScroll=function(){var y=scrollY;nav.classList.toggle('solid',y>40);mob.classList.toggle('on',y>innerHeight*.7);
+    if(bg&&y<innerHeight)bg.style.translate='0 '+(y*.25)+'px';};
+  addEventListener('scroll',onScroll,{passive:true});onScroll();
+  var burger=document.getElementById('burger');
+  burger.onclick=function(){var o=nav.classList.toggle('open');burger.setAttribute('aria-expanded',o)};
+  document.querySelectorAll('#menu-nav a').forEach(function(a){a.onclick=function(){nav.classList.remove('open');burger.setAttribute('aria-expanded',false)}});
+
+  // scintille nell'hero
+  if(!matchMedia('(prefers-reduced-motion:reduce)').matches){
+    var sp=document.getElementById('sparks');
+    for(var k=0;k<14;k++){var s=document.createElement('i');s.className='spark';s.style.left=(5+Math.random()*90)+'%';s.style.top=(40+Math.random()*55)+'%';s.style.animationDelay=(Math.random()*7)+'s';s.style.animationDuration=(5+Math.random()*4)+'s';sp.appendChild(s)}
+  }
+
+  var tr=document.getElementById('track');tr.innerHTML+=tr.innerHTML;
+
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+  document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+
+  var t=document.getElementById('tilt');
+  if(t&&matchMedia('(hover:hover)').matches){t.parentNode.addEventListener('mousemove',function(e){var r=t.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;t.style.transform='rotateY('+(x*18)+'deg) rotateX('+(-y*14)+'deg) scale(1.02)'});t.parentNode.addEventListener('mouseleave',function(){t.style.transform=''})}
+
+  var tabs=document.querySelectorAll('.tab');
+  tabs.forEach(function(b){b.onclick=function(){tabs.forEach(function(x){x.setAttribute('aria-selected','false')});b.setAttribute('aria-selected','true');
+    document.querySelectorAll('.pannello').forEach(function(p){p.classList.toggle('on',p.id===b.dataset.p)})}});
+
+  // stagione corrente
+  var mese=new Date().getMonth();
+  document.querySelectorAll('.stag').forEach(function(el){if(el.dataset.m.split(',').map(Number).indexOf(mese)>-1)el.classList.add('ora')});
+
+  var sc=document.getElementById('scroller');
+  var step=function(d){var f=sc.querySelector('figure');sc.scrollBy({left:d*(f.offsetWidth+16),behavior:'smooth'})};
+  document.getElementById('prev').onclick=function(){step(-1)};document.getElementById('next').onclick=function(){step(1)};
+  sc.tabIndex=0;sc.addEventListener('keydown',function(e){if(e.key==='ArrowRight')step(1);if(e.key==='ArrowLeft')step(-1)});
+
+  // orari + stato
+  var now=new Date(),oggi=now.getDay(),tab=document.getElementById('tabella');
+  [1,2,3,4,5,6,0].forEach(function(g){var r=document.createElement('div');r.className='riga'+(g===oggi?' oggi':'');
+    r.innerHTML='<span class="g">'+GIORNI[g]+'</span>'+(ORARI[g].length?'<span>'+fmt(ORARI[g])+'</span>':'<span class="chiuso">Chiuso</span>');tab.appendChild(r)});
+  var min=now.getHours()*60+now.getMinutes();
+  var aperto=ORARI[oggi].some(function(f){return min>=f[0]*60+f[1]&&min<f[2]*60+f[3]});
+  var prossimo=function(){
+    var oggiDopo=ORARI[oggi].filter(function(f){return f[0]*60+f[1]>min});
+    if(oggiDopo.length)return 'riapriamo oggi alle '+p2(oggiDopo[0][0])+':'+p2(oggiDopo[0][1]);
+    for(var i=1;i<=7;i++){var g=(oggi+i)%7;if(ORARI[g].length)return 'riapriamo '+(i===1?'domani':GIORNI[g].toLowerCase())+' alle '+p2(ORARI[g][0][0])+':'+p2(ORARI[g][0][1])}
+  };
+  var st=document.getElementById('stato');st.classList.toggle('aperto',aperto);
+  st.querySelector('span').textContent=aperto?'Aperto adesso':(ORARI[oggi].length?'Ora chiuso · ':'Oggi chiuso · ')+prossimo();
+
+  // form prenotazione
+  var data=document.getElementById('data'),ora=document.getElementById('ora'),pers=document.getElementById('pers');
+  for(var i=1;i<=20;i++){var o=document.createElement('option');o.value=i;o.textContent=i+(i===1?' persona':' persone');if(i===2)o.selected=true;pers.appendChild(o)}
+  var o2=document.createElement('option');o2.value='più di 20';o2.textContent='Più di 20';pers.appendChild(o2);
+  var loc=new Date(now.getTime()-now.getTimezoneOffset()*60000);data.min=loc.toISOString().slice(0,10);
+  data.onchange=function(){ora.innerHTML='';
+    if(!data.value){ora.innerHTML='<option value="">Scegli prima il giorno</option>';return}
+    var d=new Date(data.value+'T12:00'),s=ORARI[d.getDay()];
+    if(!s.length){ora.innerHTML='<option value="">Il martedì siamo chiusi</option>';return}
+    var first=document.createElement('option');first.value='';first.textContent='Scegli l\'orario';ora.appendChild(first);
+    s.forEach(function(f,idx){var g=document.createElement('optgroup');g.label=f[0]<17?'Pranzo':'Cena';
+      for(var m=f[0]*60+f[1];m<=f[2]*60+f[3]-90;m+=30){var x=document.createElement('option');x.textContent=x.value=p2(Math.floor(m/60))+':'+p2(m%60);g.appendChild(x)}
+      ora.appendChild(g)})};
+  document.getElementById('form').onsubmit=function(e){e.preventDefault();var err=document.getElementById('err');err.textContent='';
+    var nome=document.getElementById('nome').value.trim();
+    if(!nome){err.textContent='Scrivi il tuo nome.';return}
+    if(!data.value){err.textContent='Scegli il giorno.';return}
+    if(!ora.value){err.textContent=new Date(data.value+'T12:00').getDay()===2?'Il martedì siamo chiusi: scegli un altro giorno.':'Scegli l\'orario.';return}
+    var d=new Date(data.value+'T12:00'),gg=GIORNI[d.getDay()]+' '+d.toLocaleDateString('it-IT',{day:'numeric',month:'long'});
+    var tel=document.getElementById('tel').value.trim(),note=document.getElementById('note').value.trim();
+    var txt='Buongiorno, vorrei prenotare un tavolo alla Locanda Scialapopolo.\n\nNome: '+nome+'\nGiorno: '+gg+'\nOrario: '+ora.value+'\nPersone: '+pers.value+(tel?'\nTelefono: '+tel:'')+(note?'\nNote: '+note:'')+'\n\nAttendo la vostra conferma, grazie!';
+    var link=document.getElementById('walink');link.href='https://wa.me/'+WA+'?text='+encodeURIComponent(txt);
+    document.getElementById('esito').classList.add('on');link.focus()};
+})();
+</script>
+</body>
+</html>
